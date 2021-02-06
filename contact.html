@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Contact</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div id="contact"> <!--Container to wrap everything-->
+        <header>
+            <div class="logo">
+                <img src="/images/logo-social.png" alt="logo" width="256">
+            </div>
+            <nav class="main-menu">
+                <ul>
+                    <li><a href="home.html">Home</a></li>
+                    <li>Services</li>
+                    <li><a href="pricing.html">Pricing</a></li>
+                    <li><a href="case-studies.html">Case Studies</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+        </header>
+
+        <main>
+            <div class="contact-intro">
+                <h1>Contact Us</h1>
+                <p>Any questions, just ask us!</p>
+            </div>
+            
+            <div class="contact-info">
+                <div>
+                    <span>Phone:</span>
+                    <span>(800)000-0000</span>
+                </div>
+                <div>
+                    <span>Email:</span>
+                    <span>hello@awesomeagency.com</span>
+                </div>
+            </div>
+            <form>
+                <fieldset>
+                    <label>Name:</label>
+                    <input type="text" name="name">
+                    <label>Company:</label>
+                    <input type="text" name="company">
+                    <label>Email:</label>
+                    <input type="email" name="email">
+                    <label>Which service are you inquiring about?</label>
+                    <select id="dropdown">
+                        <option>Select One</option>
+                        <option id="seo">SEO</option>
+                        <option id="paid-search">Paid Search</option>
+                        <option id="paid-social">Paid Social</option>
+                        <option id="others">Others</option>
+                    </select>
+
+                    <div id="question-seo">
+                        <label>What is your SEO monthly budget?</label>
+                        <input type="number">
+                    </div>
+
+                    <div id="question-paidsearch">
+                        <label>What is your paid search monthly budget?</label>
+                        <input type="number">
+                    </div>
+
+                    <div id="question-paidsocial">
+                        <label>What is your paid social monthly budget?</label>
+                        <input type="number">
+                    </div>
+
+                    <div  id="question-others">
+                        <label>What service are you inquiring about?</label>
+                        <input type="text">
+                    </div>
+
+
+                    <label>Message:</label>
+                    <textarea rows="5" cols="30" ></textarea>
+                    <input type="submit" value="Send">
+                </fieldset></form>  
+            </form>
+        
+        </main>
+
+    </div> <!--end container-->
+
+    <footer>
+        <div id="nondisclaimer">
+                <div class="copy"> 
+                    <p>&copy; Copyright 2020 :: somewebsite.com</p>
+                </div>
+                <div class="social">
+                    <a href="#" class="fa fa-facebook"></a>
+                    <a href="#" class="fa fa-instagram"></a>
+                    <a href="#" class="fa fa-twitter"></a>
+                </div>
+        </div>
+    </footer>
+    <script src="contact_dropdown.js"></script>
+</body>
+</html>
