@@ -31,7 +31,8 @@ var photos = []; //declare an empty array to store image element
         //Create a loop to create 6 images starting with index of 0
         for (var i=0; i<10; i++) {
             fileNames.push("image"+(i+1));//create image file name and store in the array
-            photos.push("<img src='images/"+fileNames[i]+".png'>"); //assemble file name into image element and store in an array
+            photos.push("<a href='#/' class='lightbox-toggle'>" + "<img src='images/"+fileNames[i]+".png'>" + "</a>"); //assemble file name into image element and store in an array
+            
             image =  
             openList + 
             photos[i] + 
@@ -62,3 +63,35 @@ var photos = []; //declare an empty array to store image element
         }
 
         document.getElementById("click-close").addEventListener("click", closeBox)
+
+        // Lightbox feature
+        $(document).ready(function(){
+
+            /* Open lightbox on button click */
+            $('.lightbox-toggle img').click(function(){
+                $('.backdrop').animate({'opacity':'.50'}, 300, 'linear').css('display', 'block');
+                $('.box').fadeIn();
+        
+                //Check if lightbox has an image
+                if ($('.box').contents('img')) {
+                    $('.box').contents().remove('img'); //If true, clear image
+                }
+        
+                //Get text content in attribute
+                // var $altvalue = $(this).attr('alt'); //or var altvalue = $(this).attr('alt');
+        
+                // if ($altvalue=="Angkor Wat") {
+                    var img = $(this).clone(); //Duplicate DOM element
+                    $('.box').append(img); //Insert duplicated element in another element
+                // }
+            });
+        
+            /* Click to close lightbox */
+            $('.close, .backdrop').click(function(){
+                $('.backdrop').animate({'opacity':'0'}, 300, 'linear', function(){
+                    $('.backdrop').css('display', 'none');
+                });
+                $('.box').fadeOut();
+            });
+        
+        });
